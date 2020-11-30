@@ -19,6 +19,7 @@ export default function Search() {
     function showWeather(response) {
         setSubmit(true);
         setWeather({
+            city: response.data.name,
             temperature: response.data.main.temp,
             description: response.data.weather[0].description,
             wind: response.data.wind.speed,
@@ -42,7 +43,7 @@ export default function Search() {
     if (submit) {
         return (
             <div>
-                <h2>{city}  {Math.round(weather.temperature)}°C</h2>
+                <h2>{weather.city}  {Math.round(weather.temperature)}°C</h2>
                 <p className="detail">
                     <img src={weather.icon} alt={weather.description} />
                     <br />
