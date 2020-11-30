@@ -48,8 +48,8 @@ export default function Search() {
                     <img src={weather.icon} alt={weather.description} />
                     <br />
                     {weather.description}<br/>
-                    Wind: {Math.round(weather.wind)} m/s <br />
-                    Humidity: {weather.humidity} % <br />
+                    Wind: {Math.round(weather.wind)}m/s<br />
+                    Humidity: {weather.humidity}% <br />
                     
                 </p>
                 {form}

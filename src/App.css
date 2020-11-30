@@ -26,6 +26,8 @@ h2 {
 .detail {
   color: #333333;
   font-size: 18px;
+  font-family: "Josefin Slab", serif;
+  text-transform: capitalize;
 }
 
 footer {
