@@ -1,9 +1,11 @@
 import axios from "axios";
 import React, { useState } from "react";
+import Forecast from "./Forecast.js";
 
 
-export default function Search() {
-    const [city, setCity] = useState("");
+
+export default function Weather() {
+    const [city, setCity] = useState("true");
     const [weather, setWeather] = useState("");
     const [submit, setSubmit] = useState("");
 
@@ -11,7 +13,7 @@ export default function Search() {
         event.preventDefault();
         let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=af11ba20356f076c2cd217a6bc9cd25e&units=metric`;
         axios.get(url).then(showWeather);
-    }
+}
 
     function updateCity(event) {
         setCity(event.target.value);
@@ -29,6 +31,7 @@ export default function Search() {
         });
     }
 
+
     let form = (
         <form onSubmit={handleSubmit}>
             <input
@@ -43,7 +46,8 @@ export default function Search() {
     if (submit) {
         return (
             <div>
-                <h2>{weather.city}  {Math.round(weather.temperature)}°C</h2>
+                <h1>{weather.city} </h1>
+                <h2>{Math.round(weather.temperature)}°C</h2>
                 <p className="detail">
                     <img src={weather.icon} alt={weather.description} />
                     <br />
@@ -53,6 +57,8 @@ export default function Search() {
                     
                 </p>
                 {form}
+                <br />
+                <Forecast city={setWeather.city} />
             </div>
         );
     } else {
