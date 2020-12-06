@@ -13,15 +13,14 @@ export default function ForecastData(props) {
 
     function temperature() {
         let temperature = Math.round(props.data.main.temp);
-        let icon = props.list.weather.icon;
 
-        return `${temperature} °C`;
+        return (
+            `${temperature} °C`)
     }
 
     return (
-        <div classname="ForecastCol col">
+        <div classname="Forecast col">
             {hours()}
             {temperature()}
-            {icon()}
         </div>);
 }
