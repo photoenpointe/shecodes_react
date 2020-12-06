@@ -90,3 +90,4 @@ node_modules/.cache/babel-loader/5e0f36d85f8972cd7951bd6a4a1cef45.json
 node_modules/.cache/babel-loader/2b1d52224f2882ad6537180322fafae1.json
 node_modules/.cache/babel-loader/27c0d33bf7a8ea9e5c950e9d32964b36.json
 node_modules/.cache/babel-loader/1f9d80f1893dafc25afcbef0b7f6a069.json
+*.json

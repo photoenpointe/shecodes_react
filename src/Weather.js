@@ -27,7 +27,7 @@ export default function Weather() {
             wind: response.data.wind.speed,
             humidity: response.data.main.humidity,
             icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon
-                }@2x.png`
+                }@2x.png`,
         });
     }
 
@@ -53,13 +53,12 @@ export default function Weather() {
                     <br />
                     {weather.description}<br/>
                     Wind: {Math.round(weather.wind)}m/s<br />
-                    Humidity: {weather.humidity}% <br />
-                    
+                    Humidity: {weather.humidity}%
                 </p>
                 {form}
                 <br />
                 <Forecast city={setWeather.city} />
-            </div>
+                </div>
         );
     } else {
         return form;
