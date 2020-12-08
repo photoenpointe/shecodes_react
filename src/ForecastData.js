@@ -17,10 +17,12 @@ export default function ForecastData(props) {
         return (
             `${temperature} °C`)
     }
+        
 
     return (
         <div classname="Forecast col">
-            {hours()}
-            {temperature()}
+            {hours()}  :  {temperature()}
+            <img src={props.data.icon} alt={props.data.description} />
+
         </div>);
 }

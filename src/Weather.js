@@ -1,6 +1,8 @@
 import axios from "axios";
 import React, { useState } from "react";
 import Forecast from "./Forecast.js";
+import './App.css';
+
 
 
 
@@ -13,13 +15,12 @@ export default function Weather() {
         event.preventDefault();
         let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=af11ba20356f076c2cd217a6bc9cd25e&units=metric`;
         axios.get(url).then(showWeather);
-}
+    }
 
     function updateCity(event) {
         setCity(event.target.value);
     }
     function showWeather(response) {
-        setSubmit(true);
         setWeather({
             city: response.data.name,
             temperature: response.data.main.temp,
@@ -29,6 +30,7 @@ export default function Weather() {
             icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon
                 }@2x.png`,
         });
+        setSubmit(true);
     }
 
 
@@ -51,14 +53,19 @@ export default function Weather() {
                 <p className="detail">
                     <img src={weather.icon} alt={weather.description} />
                     <br />
-                    {weather.description}<br/>
+                    {weather.description}<br />
                     Wind: {Math.round(weather.wind)}m/s<br />
                     Humidity: {weather.humidity}%
                 </p>
-                {form}
                 <br />
-                <Forecast city={setWeather.city} />
+                <h1>Temperature for the next 12 hours </h1>
+                <div className="Forecast" >
+                    <Forecast city={weather.city} />
                 </div>
+                <br />
+                <br />
+                {form}
+            </div>
         );
     } else {
         return form;

@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import ForecastData from "./ForecastData.js";
 
+
 export default function Forecast(props) {
     const [submit, setSubmit] = useState(false);
     const [forecast, setForecast] = useState(null);
